@@ -1,0 +1,64 @@
+/*Анимации кнопок */
+//Анимация кнопки. Перекрашиваение фона и текста
+%anim-btn-header {
+    transition: all 0.4s ease-in-out;
+    &:hover {
+        background-color: #284dc7;
+        color: white;
+        box-shadow: 10px 10px 10px 0px rgba(34, 60, 80, 0.2);
+    }
+}
+//Анимация кнопки. Создание box-shadow
+%anim-btn-boxshadow {
+    &:hover{
+        box-shadow: 26px 25px 27px 0px rgba(44, 130, 212, 0.2);
+    }
+}
+//--------------------------------------------------------------------
+/*Анимации строк */
+//Анимация ссылок заголовка. Движение слева направо под текстом
+%anim-link-header {
+    &:hover::after{
+        content:'';
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 0;
+        width: 2%;
+        height: 2px;
+        background-color: #222222;
+        animation-name: anim-link-hover;
+        animation-duration: 0.4s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+    }
+    @keyframes anim-link-hover {
+        0% {
+            width: 2%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+}
+//Анимация ссылки - текста
+%anim-link-default {
+    transition: all 0.4s ease-in-out;
+    &:hover {
+        color: #0dbfec;
+    }
+}
+
+//--------------------------------------------------------------------
+/*Анимация форм*/
+%anim-form-default {
+    transition: all 0.4s ease-in-out;
+    &:hover {
+
+        box-shadow: 2px 2px 15px 5px rgba(56,131,255,0.69);
+    }
+    &:focus{
+        border: 2px solid rgba(60, 94, 187, 0.671);
+    }
+}
+
